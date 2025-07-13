@@ -1,6 +1,6 @@
 # FunQueue Frontend
 
-React와 Firebase를 사용한 큐 관리 애플리케이션입니다.
+React와 Firebase를 사용한 FunQueue 애플리케이션입니다.
 
 ## 기술 스택
 
@@ -65,6 +65,26 @@ src/
 - `npm test` - 테스트 실행
 - `npm run eject` - 설정 추출 (주의: 되돌릴 수 없음)
 
+## 모바일 최적화
+
+이 앱은 모바일과 데스크톱 모두에서 최적화되어 있습니다:
+
+### 모바일 지원 기능
+
+- **반응형 디자인**: 모든 화면 크기에 맞게 자동 조정
+- **터치 최적화**: 모바일 터치 인터페이스에 최적화된 버튼 크기
+- **PWA 지원**: 홈 화면에 추가 가능한 웹 앱
+- **iOS/Android 최적화**: 각 플랫폼에 맞는 메타 태그 설정
+
+### 테스트 방법
+
+1. **데스크톱**: 브라우저에서 개발자 도구 > Device Toolbar 사용
+2. **모바일**: 같은 네트워크에서 IP 주소로 접속
+   ```bash
+   # 개발 서버 IP 확인
+   ifconfig | grep "inet " | grep -v 127.0.0.1
+   ```
+
 ## 배포
 
 ```bash
@@ -72,3 +92,12 @@ npm run build
 ```
 
 빌드된 파일은 `build/` 폴더에 생성됩니다.
+
+### Firebase Hosting 배포
+
+```bash
+npm install -g firebase-tools
+firebase login
+firebase init hosting
+firebase deploy
+```
